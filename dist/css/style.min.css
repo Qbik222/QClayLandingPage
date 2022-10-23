@@ -1118,6 +1118,12 @@ main {
     justify-content: center;
     align-items: center;
   }
+  .platform__container .platfotm__center-collum {
+    margin-top: 0px;
+  }
+  .platform__container .platfotm__right-collum {
+    top: -47px;
+  }
   .platform__container .platform__descr {
     position: absolute;
     top: 350px;
@@ -1147,7 +1153,7 @@ main {
     width: 100vw;
   }
 }
-@media (max-width: 774px) {
+@media (max-width: 1000px) {
   header .header__logo {
     position: absolute;
     left: 28px;
@@ -1420,7 +1426,7 @@ main {
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
-    margin-top: 29px;
+    margin-top: 75px;
     left: 0px;
     bottom: 0px;
     max-width: 336px;
@@ -1586,6 +1592,7 @@ main {
   .crypto__container .crypto__descr h2 {
     text-align: center;
     margin-right: 0px;
+    font-size: calc(12px + 6 * (100vw - 320px) / 850);
   }
   .crypto__container .crypto__descr h3 {
     text-align: center;
@@ -1596,6 +1603,7 @@ main {
   .crypto__container .crypto__descr h3 p {
     padding-right: 0;
     margin-top: 4px;
+    font-size: calc(40px + 12 * (100vw - 320px) / 850);
   }
   .crypto__container .crypto__descr h3 p:nth-child(2n) {
     text-align: left;
@@ -1612,13 +1620,23 @@ main {
     height: 300px;
     margin-top: 20px;
     font-size: 52px;
+    font-size: calc(40px + 12 * (100vw - 320px) / 850);
   }
+}
+@media (max-width: 420px) and (max-width: 350px) {
+  .crypto__container .crypto__descr h3 .crypto__container .crypto__descr h3 span {
+    right: -10px;
+  }
+}
+@media (max-width: 420px) {
   .crypto__container .crypto__descr h3 span::after {
     width: 26px;
     height: 5px;
     top: 40px;
     left: 14px;
   }
+}
+@media (max-width: 420px) {
   .crypto__container .crypto__descr .crypto__text {
     position: relative;
     right: 1px;
@@ -1628,6 +1646,8 @@ main {
     line-height: 25px;
     width: 70%;
   }
+}
+@media (max-width: 420px) {
   .crypto__container .crypto__descr .crypto__btn {
     position: relative;
     width: 193px;
@@ -1635,6 +1655,8 @@ main {
     top: 43px;
     left: 0;
   }
+}
+@media (max-width: 420px) {
   .about__container {
     text-align: center;
     margin-top: 275px;
@@ -1681,6 +1703,13 @@ main {
     left: 28px;
     bottom: 90px;
   }
+}
+@media (max-width: 420px) and (max-width: 340px) {
+  .about__container .about__content #about__bars {
+    left: 10px;
+  }
+}
+@media (max-width: 420px) {
   .platform__container {
     height: 780px;
   }
@@ -1697,6 +1726,8 @@ main {
   .platform__container .platform__descr a {
     font-size: 15px;
   }
+}
+@media (max-width: 420px) {
   .promo__container {
     flex-direction: column;
     align-items: center;
@@ -1773,8 +1804,22 @@ main {
     background-position: 100% 100%;
     height: 426px;
   }
+}
+@media (max-width: 420px) {
   #elipses {
     position: absolute;
     left: 0;
+  }
+}
+@media (max-width: 335px) {
+  .platform__container .platform__left-collum::before {
+    width: 49.55vw;
+    right: 23.2vw;
+  }
+}
+@media (max-width: 335px) {
+  .platform__container .platform__left-collum::before {
+    width: 49.55vw;
+    right: 23.7vw;
   }
 }

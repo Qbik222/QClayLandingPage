@@ -873,3 +873,11 @@ main{
 
 @include width1200;
 @include mobile;
+@media (max-width: 335px){
+    .platform__container{
+        .platform__left-collum::before{
+            width: 49.55vw;
+            right: 23.7vw;
+        }
+    }
+}

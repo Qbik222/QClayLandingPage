@@ -60,6 +60,12 @@
         .platform__container{
             justify-content: center;
             align-items: center;
+            .platfotm__center-collum{
+                margin-top: 0px;
+            }
+            .platfotm__right-collum{
+                top: -47px;
+            }
             .platform__descr{
                 position: absolute;
                 top: 350px;
@@ -98,8 +104,9 @@
         }
     }
 }
+
 @mixin mobile{
-    @media (max-width: 774px) {
+    @media (max-width: 1000px) {
         header{
             .header__logo{
                 position: absolute;
@@ -195,6 +202,7 @@
                 }
             }
         }
+    
         .platform__container {
             position: relative;
             display: flex;
@@ -205,7 +213,7 @@
             width: 100%;
             height: 800px;
         
-        
+         
             .platform__left-collum {
                 display: flex;
                 flex-direction: row;
@@ -333,7 +341,7 @@
                 display: none;
         
             }
-         
+          
             .platfotm__center-collum {
                 position: relative;
                 flex-direction: row;
@@ -429,7 +437,7 @@
                 display: flex;
                 flex-direction: column-reverse;
                 justify-content: space-between;
-                margin-top: 29px;
+                margin-top: 75px;
                 left: 0px;
                 bottom: 0px;
                 max-width: 336px;
@@ -630,6 +638,8 @@
                 h2{
                     text-align: center;
                     margin-right: 0px;
+                    font-size: calc(12px + (18 - 12) * ((100vw - 320px)/ (1170 - 320)));
+           
                 }
              
             
@@ -638,9 +648,12 @@
                     line-height: 40px;
                     width: 100%;
                     margin-top: 0;
+
                     p{
                         padding-right: 0;
                         margin-top: 4px;
+                        font-size: calc(40px + (52 - 40) * ((100vw - 320px)/ (1170 - 320)));
+           
                     }
                     p:nth-child(2n){
                         text-align: left;
@@ -648,6 +661,7 @@
                         top: 65px;
                         left: -2px;
                         padding-left: 0;
+                        
                     }
                     span{
                       
@@ -658,8 +672,24 @@
                         height: 300px;
                         margin-top: 20px;
                         font-size: 52px;
+                        font-size: calc(40px + (52 - 40) * ((100vw - 320px)/ (1170 - 320)));
+           
+                        
                         
                     }
+                    @media (max-width: 350px) {
+                        .crypto__container{
+                            .crypto__descr{
+                                h3{
+                                    span{
+                                        right: -10px;
+                                    }
+                                }
+                              
+                            }
+                        }
+                    }
+                  
                     span::after{
                         width: 26px;
                         height: 5px;
@@ -688,6 +718,7 @@
             }
             
         }
+       
         .about__container{
             text-align: center;
             margin-top: 275px;
@@ -707,9 +738,11 @@
                     // max-width: 334px;
                     // max-height: 332px;
                     width: 88vw;
+                  
                 
                     
                 }
+               
 
                 .about__text{
                     position: relative;
@@ -742,6 +775,16 @@
                 }
             }
         }
+         @media (max-width: 340px) {
+                    .about__container{
+                        .about__content{
+                            #about__bars{
+                                left: 10px;
+                            }
+                        }
+                    }
+                 
+                }
         .platform__container{
             height: 780px;
             .platform__descr{
@@ -854,4 +897,13 @@
         }
         
     }
+    @media (max-width: 335px){
+        .platform__container{
+            .platform__left-collum::before{
+                width: 49.55vw;
+                right: 23.2vw;
+            }
+        }
+    }
 }
+
