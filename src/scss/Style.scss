@@ -11,7 +11,7 @@ $mainColorText: #F3F3F3;
 body{
     display: flex;
     justify-content: center;
-    background: #000;
+    background: #000;  
 }
 .wrapper{
     display: flex;
@@ -19,6 +19,7 @@ body{
     align-items: center;
     max-width: 1170px;
     width: 100%;
+
 }
 
 
@@ -863,6 +864,7 @@ main{
     }
 }
 #elipses{
+    // display: none;
     position: absolute;
     right: 0;
     top: 818px;

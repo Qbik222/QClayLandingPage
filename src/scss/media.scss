@@ -135,8 +135,14 @@
             width: 100vw;
             padding-left: 29px;
             padding-right: 29px;
+            height: 70vh;
+            background-image: url(../img/Pattern.svg);
+            background-position: 4% 60%;
+            background-size: 220%;
+            background-repeat: no-repeat;
 
             #pattern{
+                display: none;
                 position: absolute;
                 right: -80vw;
                 top: 95.35px;
@@ -147,6 +153,7 @@
             }
         
             #union{
+                display: none;
                 position: absolute;
                 left: 229.8px;
                 top: 717px;
@@ -159,9 +166,10 @@
                 }
                 h3{
                     text-align: center;
-                    line-height: 81px;
+                    line-height: 101px;
                     span{
                         justify-content: center;
+                        left: 20px;
                     }
                 }
                 p{
@@ -581,6 +589,15 @@
             
         }
     }
+    @media (max-width: 650px){
+        .crypto__container{
+            background-image: url(../img/Pattern.svg);
+            background-position: 20% 100%;
+            background-size: 360%;
+            background-repeat: no-repeat;
+        }
+    }
+    
     @media (max-width: 420px){
         header{
             .header__logo{
@@ -636,6 +653,7 @@
                 flex-direction: column;
                 align-items: center;
                 h2{
+                    
                     text-align: center;
                     margin-right: 0px;
                     font-size: calc(12px + (18 - 12) * ((100vw - 320px)/ (1170 - 320)));
@@ -650,6 +668,7 @@
                     margin-top: 0;
 
                     p{
+                       
                         padding-right: 0;
                         margin-top: 4px;
                         font-size: calc(40px + (52 - 40) * ((100vw - 320px)/ (1170 - 320)));
@@ -659,14 +678,14 @@
                         text-align: left;
                         position: absolute;
                         top: 65px;
-                        left: -2px;
+                        left: 30px;
                         padding-left: 0;
                         
                     }
                     span{
                       
                         position: absolute;
-                        right: 13px;
+                        right: -120px;
                         top: 77px;
                         justify-content: center;
                         height: 300px;
@@ -730,6 +749,8 @@
                 line-height: 50px;
                 font-size: 40px;
                 letter-spacing: 0px;
+              
+        
             }
             .about__content{
                 margin-top: 40px;
@@ -786,11 +807,15 @@
                  
                 }
         .platform__container{
+     
+
             height: 780px;
             .platform__descr{
+                width: 100vw;
                 left: 6.92vw;
               h3{
                 font-size: 33px;
+                width: 90%;
               }
               p{
                 font-size: 16px;
@@ -798,6 +823,7 @@
               }
               a{
                 font-size: 15px;
+                width: 100px;
               }
             }
         }
@@ -897,13 +923,93 @@
         }
         
     }
-    @media (max-width: 335px){
-        .platform__container{
-            .platform__left-collum::before{
-                width: 49.55vw;
-                right: 23.2vw;
+    @media (max-width: 340px){
+        .crypto__container{
+       
+            margin-top: 103px;
+
+            #pattern{
+                position: absolute;
+                right: -84vw;
+                top: 36.35px;
+                width: 1659.81px;
+                height: 732.37px;
+        
+           
             }
+        
+            #union{
+                position: absolute;
+                left: 121.8px;
+                top: 462px;
+                width: 90vw;
+            }
+
+            .crypto__descr{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h2{
+                    
+                    text-align: center;
+                    margin-right: 0px;
+                    font-size: calc(12px + (18 - 12) * ((100vw - 320px)/ (1170 - 320)));
+           
+                }
+             
+            
+                h3{
+                    text-align: center;
+                    line-height: 40px;
+                    width: 100%;
+                    margin-top: 0;
+
+                    p{
+                       
+                        padding-right: 0;
+                        margin-top: 4px;
+                        font-size: calc(40px + (52 - 40) * ((100vw - 320px)/ (1170 - 320)));
+           
+                    }
+                    p:nth-child(2n){
+                        text-align: left;
+                        position: absolute;
+                        top: 65px;
+                        left: 0px;
+                        padding-left: 0;
+                        
+                    }
+                    span{
+                      
+                        position: absolute;
+                        right: -60px;
+                        top: 77px;
+                        justify-content: center;
+                        height: 300px;
+                        margin-top: 20px;
+                        font-size: 52px;
+                        font-size: calc(40px + (52 - 40) * ((100vw - 320px)/ (1170 - 320)));
+           
+                        
+                        
+                    }
+              
+                  
+                    span::after{
+                   
+                    }
+                }
+                .crypto__text{
+           
+                }
+                .crypto__btn{
+             
+                    
+                }
+            }
+            
         }
     }
+ 
 }
 

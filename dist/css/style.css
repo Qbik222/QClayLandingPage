@@ -1180,8 +1180,14 @@ main {
     width: 100vw;
     padding-left: 29px;
     padding-right: 29px;
+    height: 70vh;
+    background-image: url(../img/Pattern.svg);
+    background-position: 4% 60%;
+    background-size: 220%;
+    background-repeat: no-repeat;
   }
   .crypto__container #pattern {
+    display: none;
     position: absolute;
     right: -80vw;
     top: 95.35px;
@@ -1189,6 +1195,7 @@ main {
     height: 722.37px;
   }
   .crypto__container #union {
+    display: none;
     position: absolute;
     left: 229.8px;
     top: 717px;
@@ -1199,10 +1206,11 @@ main {
   }
   .crypto__container .crypto__descr h3 {
     text-align: center;
-    line-height: 81px;
+    line-height: 101px;
   }
   .crypto__container .crypto__descr h3 span {
     justify-content: center;
+    left: 20px;
   }
   .crypto__container .crypto__descr p {
     margin: 0 auto;
@@ -1543,6 +1551,14 @@ main {
     height: 426px;
   }
 }
+@media (max-width: 650px) {
+  .crypto__container {
+    background-image: url(../img/Pattern.svg);
+    background-position: 20% 100%;
+    background-size: 360%;
+    background-repeat: no-repeat;
+  }
+}
 @media (max-width: 420px) {
   header .header__logo {
     position: absolute;
@@ -1609,12 +1625,12 @@ main {
     text-align: left;
     position: absolute;
     top: 65px;
-    left: -2px;
+    left: 30px;
     padding-left: 0;
   }
   .crypto__container .crypto__descr h3 span {
     position: absolute;
-    right: 13px;
+    right: -120px;
     top: 77px;
     justify-content: center;
     height: 300px;
@@ -1714,10 +1730,12 @@ main {
     height: 780px;
   }
   .platform__container .platform__descr {
+    width: 100vw;
     left: 6.92vw;
   }
   .platform__container .platform__descr h3 {
     font-size: 33px;
+    width: 90%;
   }
   .platform__container .platform__descr p {
     font-size: 16px;
@@ -1725,6 +1743,7 @@ main {
   }
   .platform__container .platform__descr a {
     font-size: 15px;
+    width: 100px;
   }
 }
 @media (max-width: 420px) {
@@ -1811,10 +1830,60 @@ main {
     left: 0;
   }
 }
-@media (max-width: 335px) {
-  .platform__container .platform__left-collum::before {
-    width: 49.55vw;
-    right: 23.2vw;
+@media (max-width: 340px) {
+  .crypto__container {
+    margin-top: 103px;
+  }
+  .crypto__container #pattern {
+    position: absolute;
+    right: -84vw;
+    top: 36.35px;
+    width: 1659.81px;
+    height: 732.37px;
+  }
+  .crypto__container #union {
+    position: absolute;
+    left: 121.8px;
+    top: 462px;
+    width: 90vw;
+  }
+  .crypto__container .crypto__descr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .crypto__container .crypto__descr h2 {
+    text-align: center;
+    margin-right: 0px;
+    font-size: calc(12px + 6 * (100vw - 320px) / 850);
+  }
+  .crypto__container .crypto__descr h3 {
+    text-align: center;
+    line-height: 40px;
+    width: 100%;
+    margin-top: 0;
+  }
+  .crypto__container .crypto__descr h3 p {
+    padding-right: 0;
+    margin-top: 4px;
+    font-size: calc(40px + 12 * (100vw - 320px) / 850);
+  }
+  .crypto__container .crypto__descr h3 p:nth-child(2n) {
+    text-align: left;
+    position: absolute;
+    top: 65px;
+    left: 0px;
+    padding-left: 0;
+  }
+  .crypto__container .crypto__descr h3 span {
+    position: absolute;
+    right: -60px;
+    top: 77px;
+    justify-content: center;
+    height: 300px;
+    margin-top: 20px;
+    font-size: 52px;
+    font-size: calc(40px + 12 * (100vw - 320px) / 850);
   }
 }
 @media (max-width: 335px) {
