@@ -107,6 +107,16 @@
 
 @mixin mobile{
     @media (max-width: 1000px) {
+        #elipses{
+            display: none;
+    
+        }
+        main{
+            background-image: url(../img/ellipses.svg);
+            background-repeat: no-repeat;
+            background-position: 0 20%;
+         
+        }
         header{
             .header__logo{
                 position: absolute;
