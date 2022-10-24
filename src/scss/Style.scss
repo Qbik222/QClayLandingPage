@@ -16,6 +16,7 @@ body{
     // background-image: url(../img/Union.svg);
     // background-repeat: no-repeat;
     // background-position: 82%;
+
  
 }
 .wrapper{
@@ -25,6 +26,7 @@ body{
     max-width: 1170px;
     width: 100%;
     height: 100%;
+
 
 }
 
@@ -137,6 +139,7 @@ header{
 }
 main{
     width: 100%;
+
 }
 .crypto__container{
     width: 100%;
@@ -879,10 +882,11 @@ main{
     }
 }
 #elipses{
-    display: none;
+
     position: absolute;
     right: 0;
     top: 818px;
+    overflow-y: hidden;
 }
 
 
