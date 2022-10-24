@@ -894,6 +894,13 @@ main {
   margin-top: 170px;
   height: 860px;
 }
+.promo__container .promo__card:hover {
+  cursor: pointer;
+  position: relative;
+  bottom: 5px;
+  right: 3px;
+  text-shadow: 0 0 10px rgb(67, 74, 131);
+}
 .promo__container .promo__leftCollum {
   max-width: 465px;
   width: 100%;
