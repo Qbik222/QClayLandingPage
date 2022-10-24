@@ -12,6 +12,11 @@ body{
     display: flex;
     justify-content: center;
     background: #000;  
+    overflow-x: hidden;
+    // background-image: url(../img/Union.svg);
+    // background-repeat: no-repeat;
+    // background-position: 82%;
+ 
 }
 .wrapper{
     display: flex;
@@ -19,6 +24,7 @@ body{
     align-items: center;
     max-width: 1170px;
     width: 100%;
+    height: 100%;
 
 }
 
@@ -864,7 +870,7 @@ main{
     }
 }
 #elipses{
-    // display: none;
+    display: none;
     position: absolute;
     right: 0;
     top: 818px;

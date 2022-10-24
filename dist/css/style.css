@@ -106,127 +106,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-.header__shadow {
-  position: absolute;
-  width: 40vw;
-  height: 50vh;
-  left: 0vw;
-  top: -10vh;
-  background: rgb(222, 222, 222);
-  background: radial-gradient(circle, rgba(75, 73, 73, 0.4) 0%, rgba(255, 255, 255, 0) 65%);
-  border-radius: 100px;
-  z-index: 0;
-}
-
-.cryptoBg__shadow {
-  position: absolute;
-  width: 742px;
-  height: 597px;
-  right: 0vw;
-  top: 9.2vh;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.09) 0%, rgba(196, 196, 196, 0) 100%);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.bgShadow__right {
-  position: absolute;
-  width: 1185.68px;
-  height: 703.47px;
-  background: linear-gradient(180deg, rgba(0, 65, 218, 0.115) 0%, rgba(40, 0, 153, 0.115) 91.72%);
-  filter: blur(100px);
-  border-radius: 27181500px;
-  transform: rotate(131.65deg);
-  left: 70%;
-  top: -30%;
-}
-
-.bgShadow__left {
-  position: absolute;
-  width: 1185.68px;
-  height: 703.47px;
-  top: 60%;
-  right: 70%;
-  background: linear-gradient(180deg, rgba(0, 65, 218, 0.161) 0%, rgba(40, 0, 153, 0.161) 91.72%);
-  filter: blur(100px);
-  border-radius: 27181500px;
-  transform: rotate(131.65deg);
-  z-index: 0;
-}
-
-.platformBg__shadow {
-  position: absolute;
-  left: -290%;
-  top: 80%;
-  width: 485.68px;
-  height: 703.47px;
-  background: linear-gradient(135deg, #929292 0%, rgba(146, 146, 146, 0.5) 91.72%);
-  filter: blur(40px);
-  opacity: 0.1;
-  border-radius: 27181500px;
-  transform: rotate(50.65deg);
-}
-
-.platformBg__shadow:nth-child(2n) {
-  position: absolute;
-  left: -90%;
-  top: 60%;
-  width: 585.68px;
-  height: 503.47px;
-  background: linear-gradient(135deg, #929292 0%, rgba(146, 146, 146, 0.5) 91.72%);
-  filter: blur(40px);
-  border-radius: 27181500px;
-  opacity: 0.1;
-  transform: rotate(131.65deg);
-}
-
-.platformBg__shadow:nth-child(3n) {
-  position: absolute;
-  left: 80%;
-  top: -50%;
-  width: 885.68px;
-  height: 603.47px;
-  background: linear-gradient(135deg, #929292 0%, #929292 91.72%);
-  filter: blur(100px);
-  border-radius: 27181500px;
-  transform: rotate(131.65deg);
-}
-
-.cards__shadow {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 140px;
-  height: 70px;
-  background: linear-gradient(135deg, rgba(146, 146, 146, 0.4) 0%, #929292 91.72%);
-  filter: blur(100px);
-}
-
-.cards__shadow:nth-child(2n) {
-  position: absolute;
-  bottom: 80%;
-  right: 80%;
-  width: 140px;
-  height: 70px;
-  background: linear-gradient(135deg, rgba(146, 146, 146, 0.4) 0%, #929292 91.72%);
-  filter: blur(100px);
-}
-
-.footer__shadow {
-  background: linear-gradient(0deg, rgba(87, 87, 87, 0.23), rgba(87, 87, 87, 0.23));
-  filter: blur(100px);
-  border-radius: 27181500px;
-  transform: rotate(157.5deg);
-  position: absolute;
-  bottom: -210vh;
-  left: 20%;
-  width: 923.19px;
-  height: 580.96px;
-}
-
 body {
   display: flex;
   justify-content: center;
   background: #000;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -235,6 +119,7 @@ body {
   align-items: center;
   max-width: 1170px;
   width: 100%;
+  height: 100%;
 }
 
 header {
@@ -1072,6 +957,7 @@ main {
 }
 
 #elipses {
+  display: none;
   position: absolute;
   right: 0;
   top: 818px;
@@ -1560,6 +1446,12 @@ main {
   }
 }
 @media (max-width: 420px) {
+  body {
+    background-image: url(../img/Union.svg);
+    background-repeat: no-repeat;
+    background-position: 290% 95%;
+    background-size: 90%;
+  }
   header .header__logo {
     position: absolute;
     left: 27px;
@@ -1604,6 +1496,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .crypto__container .crypto__descr h2 {
     text-align: center;
@@ -1617,7 +1510,9 @@ main {
     margin-top: 0;
   }
   .crypto__container .crypto__descr h3 p {
+    width: 15vw;
     padding-right: 0;
+    left: 15%;
     margin-top: 4px;
     font-size: calc(40px + 12 * (100vw - 320px) / 850);
   }
@@ -1625,15 +1520,17 @@ main {
     text-align: left;
     position: absolute;
     top: 65px;
-    left: 30px;
+    left: 0px;
     padding-left: 0;
+    margin: 0;
   }
   .crypto__container .crypto__descr h3 span {
-    position: absolute;
-    right: -120px;
+    width: 50vw;
+    position: relative;
+    left: 0;
     top: 77px;
     justify-content: center;
-    height: 300px;
+    height: 100px;
     margin-top: 20px;
     font-size: 52px;
     font-size: calc(40px + 12 * (100vw - 320px) / 850);
@@ -1681,6 +1578,7 @@ main {
     margin-bottom: 18px;
   }
   .about__container h3 {
+    width: 90vw;
     line-height: 50px;
     font-size: 40px;
     letter-spacing: 0px;
@@ -1692,6 +1590,7 @@ main {
     width: 88vw;
   }
   .about__container .about__content .about__text {
+    width: 90vw;
     position: relative;
     margin: 0;
     bottom: 38px;
@@ -1704,6 +1603,7 @@ main {
     height: 60px;
   }
   .about__container .about__content .about__text ul {
+    max-width: 90vw;
     margin-top: 0;
   }
   .about__container .about__content .about__text ul li {
@@ -1730,7 +1630,7 @@ main {
     height: 780px;
   }
   .platform__container .platform__descr {
-    width: 100vw;
+    max-width: 90vw;
     left: 6.92vw;
   }
   .platform__container .platform__descr h3 {
@@ -1744,6 +1644,9 @@ main {
   .platform__container .platform__descr a {
     font-size: 15px;
     width: 100px;
+  }
+  .platform__container .platfotm__right-collum .platform__card {
+    margin-top: 0;
   }
 }
 @media (max-width: 420px) {
@@ -1831,6 +1734,11 @@ main {
   }
 }
 @media (max-width: 340px) {
+  main {
+    background-image: url(../img/ellipses.svg);
+    background-position: 20% 20%;
+    background-repeat: no-repeat;
+  }
   .crypto__container {
     margin-top: 103px;
   }
@@ -1874,16 +1782,6 @@ main {
     top: 65px;
     left: 0px;
     padding-left: 0;
-  }
-  .crypto__container .crypto__descr h3 span {
-    position: absolute;
-    right: -60px;
-    top: 77px;
-    justify-content: center;
-    height: 300px;
-    margin-top: 20px;
-    font-size: 52px;
-    font-size: calc(40px + 12 * (100vw - 320px) / 850);
   }
 }
 @media (max-width: 335px) {
