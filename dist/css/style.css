@@ -1702,6 +1702,7 @@ main {
   .platform__container .platform__descr {
     position: absolute;
     top: -325px;
+    transform: translate(0, 0%);
   }
   .promo__container {
     flex-direction: column;
