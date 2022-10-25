@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 40vw;
   height: 50vh;
-  left: 0vw;
+  left: -20vw;
   top: -10vh;
   background: rgb(222, 222, 222);
   background: radial-gradient(circle, rgba(75, 73, 73, 0.4) 0%, rgba(255, 255, 255, 0) 65%);
@@ -138,12 +138,6 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
   .platformBg__shadow:nth-child(3n) {
-    display: none;
-  }
-  .cards__shadow {
-    display: none;
-  }
-  .cards__shadow:nth-child(2n) {
     display: none;
   }
   .footer__shadow {
@@ -280,11 +274,15 @@ header {
   margin-top: 2.5vh;
   height: 5.5vh;
   z-index: 1;
+  position: relative;
+  top: 0%;
 }
 header .header__logo {
   color: #F3F3F3;
   font-family: MazzardM-Medium;
   font-size: 25px;
+  opacity: 0;
+  transition: all 1s ease;
 }
 header .header__menu {
   display: flex;
@@ -300,6 +298,15 @@ header .header__menu nav ul li {
   font-family: MazzardM-Medium;
   color: #F3F3F3;
   margin-right: 46px;
+  transform: translate(0, -50px);
+  transition: all 1s ease;
+  opacity: 0;
+}
+header .header__menu nav ul li:nth-child(1n) {
+  transition: all 1s ease 0s;
+}
+header .header__menu nav ul li:nth-child(2n) {
+  transition: all 1s ease 0.2s;
 }
 header .header__menu nav ul li:last-child {
   margin: 0;
@@ -318,20 +325,83 @@ header .header__btn {
   align-items: center;
   text-align: center;
   color: #000;
+  transition: all 0.5s ease;
   max-width: 170px;
   width: 100%;
   height: 60px;
   border-radius: 10px;
   box-shadow: 0 0 60px rgba(62, 111, 249, 0.6);
+  transition: all 2s ease;
+  opacity: 0;
 }
 header .header__btn p {
   font-family: MazzardM-SemiBold;
   font-size: 20px;
 }
-header .header__btn svg {
+header .header__btn .body-arrow {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 15px;
+  background: black;
+  transform: rotate(-47deg);
+  border-radius: 10px;
+}
+header .header__btn .head-arrow {
+  display: block;
   position: relative;
-  left: 0.9vh;
-  top: 0.2vh;
+  top: 11px;
+  right: 9px;
+  width: 1px;
+  height: 1px;
+  background: rgb(204, 202, 202), 0;
+  transform: rotate(-45deg);
+}
+header .header__btn .head-arrow::before {
+  position: relative;
+  bottom: 10px;
+  left: 9px;
+  display: block;
+  content: "";
+  background: black;
+  width: 9px;
+  height: 2px;
+  border-radius: 10px;
+  transform: rotate(45deg);
+}
+header .header__btn .head-arrow::after {
+  position: relative;
+  bottom: 7px;
+  left: 9px;
+  display: block;
+  content: "";
+  background: black;
+  width: 9px;
+  height: 2px;
+  border-radius: 10px;
+  transform: rotate(-45deg);
+}
+header .header__btn:hover {
+  background: linear-gradient(89.95deg, #487FFF -1.65%, #73B5FF 51.06%, #CB76FF 99.96%);
+  color: #F3F3F3;
+  transition: all 0.5s ease;
+  top: -2px;
+  right: 2px;
+}
+header .header__btn:hover svg {
+  background: white;
+}
+header .header__btn:hover .body-arrow {
+  background: rgb(255, 255, 255);
+  transition: all 0.5s ease;
+}
+header .header__btn:hover .head-arrow::after {
+  background: white;
+  transition: all 0.5s ease;
+}
+header .header__btn:hover .head-arrow::before {
+  background: white;
+  transition: all 0.5s ease;
 }
 header .menu-burger {
   position: absolute;
@@ -341,7 +411,8 @@ header .menu-burger {
   width: 32px;
   height: 7px;
   background: rgba(255, 0, 0, 0);
-  opacity: 1;
+  transition: all 1s ease;
+  opacity: 0;
 }
 header .menu-burger::before {
   display: none;
@@ -349,6 +420,8 @@ header .menu-burger::before {
   height: 1px;
   width: 32px;
   background: white;
+  transition: all 1s ease;
+  opacity: 1;
 }
 header .menu-burger::after {
   display: none;
@@ -357,6 +430,8 @@ header .menu-burger::after {
   width: 32px;
   background: white;
   margin-top: 7px;
+  transition: all 1s ease;
+  opacity: 1;
 }
 
 main {
@@ -385,16 +460,20 @@ main {
 .crypto__container .crypto__descr {
   position: relative;
   height: 491px;
+  right: 0;
+  animation-name: crypto;
+  animation-duration: 1s;
 }
 .crypto__container .crypto__descr h2 {
   color: #AAAAAA;
   font-family: MazzardH-Medium;
   font-size: 19.28px;
+  opacity: 0;
+  transition: all 1s ease;
 }
 .crypto__container .crypto__descr h3 {
   display: flex;
   position: relative;
-  right: 0.2vw;
   margin-top: 1px;
   margin-left: 4px;
   font-family: MazzardM-SemiBold;
@@ -403,6 +482,9 @@ main {
   line-height: 98px;
   z-index: 1;
   gap: 40px;
+  transform: translate(0, -40%);
+  opacity: 0;
+  transition: all 1s ease 0.5s;
 }
 .crypto__container .crypto__descr h3 p {
   position: relative;
@@ -437,7 +519,7 @@ main {
   height: 9px;
   background: rgb(165, 166, 246);
 }
-.crypto__container .crypto__descr p {
+.crypto__container .crypto__descr .crypto__text {
   position: relative;
   right: 0.2vw;
   margin-top: 132px;
@@ -446,6 +528,10 @@ main {
   color: #E9E9E9;
   width: 50%;
   line-height: 30px;
+  transform: translate(0, -160%);
+  opacity: 0;
+  transition: all 1s ease 0.7s;
+  z-index: 2;
 }
 .crypto__container .crypto__descr .crypto__btn {
   position: absolute;
@@ -465,11 +551,17 @@ main {
   justify-content: space-around;
   font-size: 18px;
   padding-left: 10px;
+  transition: all 1s ease;
   padding-bottom: 2px;
 }
 .crypto__container .crypto__descr .crypto__btn svg {
   position: relative;
   right: 2px;
+}
+.crypto__container .crypto__descr .crypto__btn:hover {
+  background: linear-gradient(89.95deg, #487FFF -1.65%, #73B5FF 51.06%, #CB76FF 99.96%);
+  color: #000000;
+  transition: all 0.5s ease;
 }
 
 .about__container {
@@ -491,6 +583,7 @@ main {
   font-size: 15px;
   margin-top: 7px;
   margin-bottom: 28px;
+  opacity: 0;
 }
 .about__container h3 {
   color: #FFFFFF;
@@ -499,12 +592,20 @@ main {
   line-height: 120%;
   letter-spacing: 1.1px;
   margin-left: 7px;
+  transform: translate(0px, 150%);
+  opacity: 0;
+  transition: all 1s ease 0.2s;
 }
 .about__container .about__content {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 65px;
+  transform: translate(0%, -30%);
+  opacity: 0;
+  transition: all 2s ease 0s;
+  max-height: 509px;
+  overflow: hidden;
 }
 .about__container .about__content #about__bars {
   width: 50%;
@@ -548,7 +649,7 @@ main {
 }
 .about__container .about__content .about__btn {
   position: absolute;
-  bottom: 219px;
+  bottom: 40px;
   right: 250px;
   display: flex;
   justify-content: center;
@@ -568,7 +669,7 @@ main {
   position: relative;
   display: flex;
   z-index: 2;
-  margin-top: 130px;
+  margin-top: 269px;
   width: 100%;
 }
 .platform__container .platform__left-collum {
@@ -587,6 +688,8 @@ main {
   background: radial-gradient(100% 100% at 0% 0%, rgba(48, 48, 48, 0.5) 0%, rgba(255, 255, 255, 0.05) 100%);
   box-shadow: inset -4.50695px -4.50695px 225.348px rgba(255, 255, 255, 0.02);
   border-radius: 25.2389px;
+  transition: all 2s ease 0.2s;
+  opacity: 0;
 }
 .platform__container .platform__left-collum .platform__card {
   display: flex;
@@ -647,6 +750,8 @@ main {
   max-width: 165px;
   height: 157px;
   width: 100%;
+  transition: all 2s ease 0.2s;
+  opacity: 0;
 }
 .platform__container .platfotm__center-collum .platform__card {
   position: relative;
@@ -708,6 +813,8 @@ main {
   background: radial-gradient(100% 100% at 0% 0%, rgba(48, 48, 48, 0.5) 0%, rgba(255, 255, 255, 0.05) 100%);
   box-shadow: inset -4.50695px -4.50695px 225.348px rgba(255, 255, 255, 0.02);
   border-radius: 25.2389px;
+  transition: all 2s ease 0.2s;
+  opacity: 0;
 }
 .platform__container .platfotm__right-collum .content__wrapper {
   display: flex;
@@ -856,6 +963,9 @@ main {
   width: 100%;
   height: 316px;
   line-height: 25px;
+  transform: translate(200%, 0%);
+  transition: all 2s ease 0.2s;
+  opacity: 0;
 }
 .platform__container .platform__descr h3 {
   font-size: 40px;
@@ -878,6 +988,8 @@ main {
   font-size: 18px;
   line-height: 27px;
   margin-bottom: 18px;
+  letter-spacing: 0.01em;
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 .platform__container .platform__descr a {
   display: block;
@@ -894,14 +1006,8 @@ main {
   margin-top: 170px;
   height: 860px;
 }
-.promo__container .promo__card:hover {
-  cursor: pointer;
-  position: relative;
-  bottom: 5px;
-  right: 3px;
-  text-shadow: 0 0 10px rgb(67, 74, 131);
-}
 .promo__container .promo__leftCollum {
+  position: relative;
   max-width: 465px;
   width: 100%;
   height: 691px;
@@ -921,10 +1027,13 @@ main {
   border-radius: 46px;
   border-radius: 46px;
   line-height: 20px;
+  position: relative;
   justify-content: center;
   background-image: url(../img/promoLeftBg.svg);
   background-repeat: no-repeat;
-  padding-top: 310px;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: all 1s ease;
 }
 .promo__container .promo__leftCollum .promo__card h2 {
   font-size: 15px;
@@ -970,6 +1079,12 @@ main {
   font-size: 16px;
   letter-spacing: 0.5px;
 }
+.promo__container .promo__leftCollum .promo__card .promo__text {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 30px;
+}
 .promo__container .promo__rightCollum {
   max-width: 700px;
   width: 100%;
@@ -995,6 +1110,9 @@ main {
   border-radius: 46px;
   border-radius: 46px;
   line-height: 20px;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: all 1s ease;
   height: 360px;
   width: 100%;
   padding-left: 30px;
@@ -1076,6 +1194,9 @@ main {
   background-position: 101.2% 0;
   background-repeat: no-repeat;
   padding-left: 23px;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: all 1s ease;
 }
 .promo__container .promo__rightCollum .promo__lower .promo__card h2 {
   font-size: 15px;
@@ -1117,6 +1238,12 @@ main {
   right: 0;
   top: 818px;
   overflow-y: hidden;
+}
+
+._animation-active {
+  transform: translate(0, 0) !important;
+  opacity: 1 !important;
+  transform: rotateY(0deg) !important;
 }
 
 @media (max-width: 1200px) {
@@ -1271,7 +1398,7 @@ main {
     left: 34%;
   }
   .about__container {
-    margin-top: 90vh;
+    margin-top: 50vh;
   }
   .about__container #mouse {
     display: none;
@@ -1280,6 +1407,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: visible;
   }
   .about__container .about__content svg {
     min-width: 319px;
@@ -1292,7 +1420,7 @@ main {
     margin-top: 0px;
   }
   .about__container .about__content .about__btn {
-    bottom: 0px;
+    bottom: -150px;
     right: 36%;
   }
   .platform__container {
@@ -1573,7 +1701,8 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 23px;
-    height: 200vh;
+    height: 250vh;
+    margin-top: 80px;
   }
   .promo__container .promo__leftCollum {
     max-width: 700px;
@@ -1613,7 +1742,7 @@ main {
   body {
     background-image: url(../img/Union.svg);
     background-repeat: no-repeat;
-    background-position: 290% 95%;
+    background-position: 290% 125%;
     background-size: 90%;
   }
   header .header__logo {
@@ -1721,6 +1850,7 @@ main {
     text-align: center;
     margin-top: 68px;
     line-height: 25px;
+    font-size: 18px;
     width: 70%;
   }
 }
@@ -1781,7 +1911,6 @@ main {
     height: 60px;
     width: 190px;
     left: 28px;
-    bottom: 90px;
   }
 }
 @media (max-width: 420px) and (max-width: 340px) {
@@ -1810,7 +1939,7 @@ main {
     width: 100px;
   }
   .platform__container .platfotm__right-collum .platform__card {
-    margin-top: 0;
+    margin-top: 25px;
   }
 }
 @media (max-width: 420px) {
@@ -1829,31 +1958,12 @@ main {
     height: 478px;
   }
   .promo__container .promo__leftCollum .promo__card {
-    position: relative;
-    margin: 0 auto;
-    width: 336px;
-    height: 478px;
-    margin-left: 0px;
-    margin-right: 0;
     background-image: url(../img/mobileCardBgUpper.svg);
     background-position: 0% 100%;
   }
-  .promo__container .promo__leftCollum .promo__card h2 {
-    position: absolute;
-    top: 34px;
-    left: -10px;
-  }
   .promo__container .promo__leftCollum .promo__card p {
-    position: absolute;
-    top: 20px;
-    left: -6px;
     font-size: 32.28px;
     width: 350px;
-  }
-  .promo__container .promo__leftCollum .promo__card a {
-    position: absolute;
-    top: 156px;
-    left: -10px;
   }
   .promo__container .promo__rightCollum {
     flex-direction: column-reverse;
@@ -1946,6 +2056,114 @@ main {
     top: 65px;
     left: 0px;
     padding-left: 0;
+  }
+  .platform__container .platform__left-collum {
+    width: 300px;
+  }
+  .platform__container .platform__left-collum .platform__card {
+    font-size: 10px;
+    width: 120px;
+  }
+  .platform__container .platform__left-collum .platform__card span::after {
+    right: 140pxs;
+  }
+  .platform__container .platform__left-collum .platform__card:nth-child(1n) {
+    margin-top: 79px;
+    margin-right: 3px;
+    padding: 0 20px;
+    line-height: 18px;
+    padding-bottom: 1px;
+  }
+  .platform__container .platform__left-collum .platform__card:nth-child(1n) span::after {
+    position: absolute;
+    top: 78px;
+    content: "";
+    width: 1px;
+    height: 136px;
+    right: 150px;
+    line-height: 0;
+    background: grey;
+    transform: rotate(180deg);
+  }
+  .platform__container .platform__left-collum .platform__card:nth-child(2n) {
+    padding-left: 27px;
+    padding-bottom: 4px;
+    margin-left: 4px;
+  }
+  .platform__container .platform__left-collum .platform__card:nth-child(2n) span::after {
+    position: absolute;
+    top: 168px;
+    content: "";
+    width: 23px;
+    height: 1px;
+    left: 60px;
+    line-height: 0;
+    background: grey;
+    transform: rotate(90deg);
+  }
+  .platform__container .platform__left-collum .platform__card:nth-child(3n) {
+    position: absolute;
+    margin: 0;
+    top: 20px;
+    width: 162px;
+    height: 58px;
+  }
+  .platform__container .platform__left-collum .platform__card:nth-child(3n) span::after {
+    position: absolute;
+    top: 148px;
+    content: "";
+    width: 23px;
+    height: 1px;
+    right: -5px;
+    line-height: 0;
+    background: grey;
+    transform: rotate(90deg);
+  }
+  .platform__container .platform__left-collum::before {
+    height: 1px;
+    width: 155px !important;
+    right: 73px !important;
+  }
+  .platform__container .platfotm__center-collum .platform__card {
+    width: 120px;
+    font-size: 10px;
+  }
+  .platform__container .platfotm__center-collum .platform__card::before {
+    left: 25px;
+  }
+  .platform__container .platfotm__center-collum .platform__card::after {
+    right: 29px;
+  }
+  .platform__container .platfotm__center-collum .platform__card:last-child {
+    width: 120px;
+    padding: 0;
+  }
+  .platform__container .platfotm__center-collum .platform__card:last-child:before {
+    left: 25px;
+  }
+  .platform__container .platfotm__center-collum .platform__card:last-child::after {
+    right: 30px;
+  }
+  .platform__container .platfotm__right-collum {
+    width: 300px;
+  }
+  .platform__container .platfotm__right-collum #arrowsForm .left__arrow .head__arrow::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    background: white;
+    width: 7.21px;
+    height: 2px;
+    transform: rotate(95deg);
+  }
+  .platform__container .platfotm__right-collum .cards__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .platform__container .platfotm__right-collum .platform__card {
+    font-size: 10px;
+    width: 120px;
   }
 }
 @media (max-width: 335px) {

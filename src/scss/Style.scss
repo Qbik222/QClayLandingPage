@@ -3,6 +3,7 @@
 @import "shadowsBg";
 @import "media";
 @import "mixins";
+// @import "animation";
 
 $headerFont: MazzardH-Bold;
 $textFont: MazzardM-Medium;
@@ -40,31 +41,49 @@ header{
     margin-top: 2.5vh;
     height: 5.5vh;
     z-index: 1;
+    position: relative;
+    top: 0%;
+
+
+
+   
  
     .header__logo{
         color: $mainColorText;
         font-family: $textFont;
         font-size: 25px;
+        opacity: 0;
+        transition: all 1s ease;
     }
     .header__menu{
         display: flex;
         // width: 25.8vw;
         padding-left: 7.5px;
         margin-left: 453px;
- 
+       
         nav{
     
             ul{
                 display: flex;
                 padding-top: 2px;
                 font-size: 18px;
-    
+              
                 // align-items: center;
                 // justify-content: center;
                 li{
                     font-family: MazzardM-Medium;
                     color: $mainColorText;
                     margin-right: 46px;
+                    transform: translate(0, -50px);
+                    transition: all 1s ease;
+                    opacity: 0;
+                
+                }
+                li:nth-child(1n){
+                    transition: all 1s ease 0s;
+                }
+                li:nth-child(2n){
+                    transition: all 1s ease 0.2s;
                 }
                 li:last-child{
                     margin: 0;
@@ -88,27 +107,109 @@ header{
         align-items: center;
         text-align: center;
         color: #000;
-      
+        transition: all 0.5s ease;
         max-width: 170px;
         width: 100%;
         height: 60px;
         border-radius: 10px;
         box-shadow: 0 0 60px rgba(62, 111, 249, 0.6);
+        transition: all 2s ease;
+        opacity: 0;
         p{
             font-family: MazzardM-SemiBold;
             font-size: 20px;
             
         }
-        svg{
-            position: relative;
-            left: 0.9vh;
-            top: 0.2vh;
+        // svg{
+        //     position: relative;
+        //     left: 0.9vh;
+        //     top: 0.2vh;
+        // }
+        // .body-arrow{
+        //     display: block;
+        //     position: relative;
+        //     top: 0px;
+        //     left: 2px;
+        //     width: 24px;
+        //     height: 24px;
+        //     background: rgb(204, 202, 202), 0;
+
+        // }
+        .body-arrow{
+            display: block;
+            content: "";
+            height: 2px;
+            width: 15px;
+            background: black;
+            transform: rotate(-47deg);
+            border-radius: 10px;
         }
+        .head-arrow{
+            display: block;
+            position: relative;
+            top: 11px;
+            right: 9px;
+            width: 1px;
+            height: 1px;
+            background: rgb(204, 202, 202), 0;
+            transform: rotate(-45deg);
+        }
+
+        .head-arrow::before{
+            position: relative;
+            bottom: 10px;
+            left: 9px;
+            display: block;
+            content: "";
+            background: black;
+            width: 9px;
+            height: 2px;
+            border-radius: 10px;
+            transform: rotate(45deg);
+        }
+        .head-arrow::after{
+            position: relative;
+            bottom: 7px;
+            left: 9px;
+            display: block;
+            content: "";
+            background: black;
+            width: 9px;
+            height: 2px;
+            border-radius: 10px;
+            transform: rotate(-45deg);
+        }
+
+
+
         
         
     }
     .header__btn:hover{
+      
+        background: linear-gradient(89.95deg, #487FFF -1.65%, #73B5FF 51.06%, #CB76FF 99.96%);
+        color: #F3F3F3;
+        transition: all 0.5s ease;
+        top: -2px;
+        right: 2px;
 
+
+        svg{
+           background: white;
+         
+        }
+        .body-arrow{
+            background: rgb(255, 255, 255);
+            transition: all 0.5s ease;
+        }
+        .head-arrow::after{
+            background: white;
+            transition: all 0.5s ease;
+        }
+        .head-arrow::before{
+            background: white;
+            transition: all 0.5s ease;
+        }
     }
     .menu-burger{
       
@@ -119,7 +220,8 @@ header{
         width: 32px;
         height: 7px;
         background: rgb(255, 0, 0, 0);
-        opacity: 1;
+        transition: all 1s ease;
+        opacity: 0;
     }
     .menu-burger::before{
         display: none;
@@ -127,6 +229,8 @@ header{
         height: 1px ;
         width: 32px;
         background: white;
+        transition: all 1s ease;
+        opacity: 1;
     }
     .menu-burger::after{
         display: none;
@@ -135,6 +239,8 @@ header{
         width: 32px;
         background: white;
         margin-top: 7px;
+        transition: all 1s ease;
+        opacity: 1;
     }
 }
 main{
@@ -168,18 +274,24 @@ main{
     .crypto__descr{
         position: relative;
         height: 491px;
+        right: 0;
+        
+        animation-name: crypto;
+        animation-duration: 1s;
 
         h2{
             color: #AAAAAA;
             font-family: MazzardH-Medium;
             font-size: 19.28px;
+            opacity: 0;
+            transition: all 1s ease;
         
 
         }
         h3{
             display: flex;
             position: relative;
-            right: 0.2vw;
+            // right: 0.2vw;
             margin-top: 1px;
             margin-left: 4px;
             font-family: MazzardM-SemiBold;
@@ -188,6 +300,9 @@ main{
             line-height: 98px;
             z-index: 1;
             gap: 40px;
+            transform: translate(0, -40%);
+            opacity: 0;
+            transition: all 1s ease 0.5s;
             p{
                 position: relative;
                 right: 0.2vw;
@@ -198,7 +313,13 @@ main{
                 line-height: 98px;
                 max-width: 385.5px;
                 width: 100%;
+
+                // animation-duration: 2s ease;
+                
             }
+
+        
+
             span{
                position: absolute;
                top: 120px;
@@ -226,7 +347,7 @@ main{
         
             }
         }
-        p{
+        .crypto__text{
             position: relative;
             right: 0.2vw;
             margin-top: 132px;
@@ -235,6 +356,10 @@ main{
             color: #E9E9E9;
             width: 50%;
             line-height: 30px;
+            transform: translate(0, -160%);
+            opacity: 0;
+            transition: all 1s ease 0.7s;
+            z-index: 2;
         }
 
         .crypto__btn{
@@ -255,6 +380,7 @@ main{
             justify-content: space-around;
             font-size: 18px;
             padding-left: 10px;
+            transition: all 1s ease;
             padding-bottom: 2px;
             svg{
                 position: relative;
@@ -263,8 +389,13 @@ main{
             }
            
         }
+        .crypto__btn:hover{
+            background: linear-gradient(89.95deg, #487FFF -1.65%, #73B5FF 51.06%, #CB76FF 99.96%);
+            color: #000000;
+            transition: all 0.5s ease;
+        }
     }
-
+ 
   
 }
 
@@ -280,6 +411,7 @@ main{
     svg{
         margin-bottom: 143px;
         width: 100%;
+
     }
     h2{
         color: #AAAAAA;
@@ -287,6 +419,7 @@ main{
         font-size: 15px;
         margin-top: 7px;
         margin-bottom: 28px;
+        opacity: 0;
     }
     h3{
         color: #FFFFFF;
@@ -295,16 +428,26 @@ main{
         line-height: 120%;
         letter-spacing: 1.1px;
         margin-left: 7px;
+        transform: translate(0px, 150%);
+        opacity: 0;
+        transition: all 1s ease 0.2s;
+   
     }
     .about__content{
         display: flex;
         justify-content: space-between;
         width: 100%;
         margin-top: 65px;
+        transform: translate(0%, -30%);
+        opacity: 0;
+        transition: all 2s ease 0s;
+        max-height: 509px;
+        overflow: hidden;
         #about__bars{
             width: 50%;
             position: relative;
             right: 13px;
+       
         }
         .about__text{
             display: flex;
@@ -352,7 +495,7 @@ main{
         }
         .about__btn{
             position: absolute;
-            bottom: 219px;
+            bottom: 40px;
             right: 250px;
             display: flex;
             justify-content: center;
@@ -377,8 +520,9 @@ main{
     position: relative;
     display: flex;
     z-index: 2;
-    margin-top: 130px;
+    margin-top: 269px;
     width: 100%;
+
 
 
     .platform__left-collum {
@@ -397,7 +541,8 @@ main{
        background: radial-gradient(100% 100% at 0% 0%, rgba(48, 48, 48, 0.5) 0%, rgba(255, 255, 255, 0.05) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
         box-shadow: inset -4.50695px -4.50695px 225.348px rgba(255, 255, 255, 0.02);
         border-radius: 25.2389px;
-        
+        transition: all 2s ease 0.2s;
+        opacity: 0;
     
 
         .platform__card{
@@ -481,7 +626,8 @@ main{
         max-width: 165px;
         height: 157px;
         width: 100%;
-
+        transition: all 2s ease 0.2s;
+        opacity: 0;
         .platform__card{
             position: relative;
             display: flex;
@@ -548,7 +694,8 @@ main{
         background: radial-gradient(100% 100% at 0% 0%, rgba(48, 48, 48, 0.5) 0%, rgba(255, 255, 255, 0.05) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
          box-shadow: inset -4.50695px -4.50695px 225.348px rgba(255, 255, 255, 0.02);
          border-radius: 25.2389px;
-
+         transition: all 2s ease 0.2s;
+         opacity: 0;
 
         .content__wrapper{
             display: flex;
@@ -710,6 +857,9 @@ main{
         width: 100%;
         height: 316px;
         line-height: 25px;
+        transform: translate(200%, 0%);
+        transition: all 2s ease 0.2s;
+        opacity: 0;
         h3{
             font-size: 40px;
             font-family: MazzardH-Medium;
@@ -727,6 +877,8 @@ main{
             font-size: 18px;
             line-height: 27px;
             margin-bottom: 18px;
+            letter-spacing: 0.01em;
+font-feature-settings: 'pnum' on, 'lnum' on;
         }
         a{
             display: block;
@@ -746,24 +898,21 @@ main{
     width: 100%;
     margin-top: 170px;
     height: 860px ;
-    .promo__card:hover{
-        cursor: pointer;
-        position: relative;
-        bottom: 5px;
-        right: 3px;
-        text-shadow: 0 0 10px rgb(67, 74, 131);
-
-    }
     .promo__leftCollum{
+        position: relative;
         max-width: 465px;
         width: 100%;
         height: 691px;
         .promo__card{
             @include promoCard;
+            position: relative;
             justify-content: center;
             background-image: url(../img/promoLeftBg.svg) ;
             background-repeat: no-repeat;
-            padding-top: 310px;
+            // padding-top: 310px;
+            transform: rotateY(180deg) ;
+            opacity: 0;
+            transition: all 1s ease;
             
 
             h2{
@@ -790,6 +939,12 @@ main{
                 letter-spacing: 0.5px;
             }
 
+            .promo__text{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                bottom: 30px;
+            }
 
 
         }
@@ -805,7 +960,9 @@ main{
             gap: 39px;
             .promo__card{
                 @include promoCard;
-              
+                transform: rotateY(180deg) ;
+                opacity: 0;
+                transition: all 1s ease ;
                 height: 360px;
                 width: 100%;
                 padding-left: 30px;
@@ -861,6 +1018,9 @@ main{
                 background-position: 101.2% 0 ;
                 background-repeat: no-repeat;
                 padding-left: 23px;
+                transform: rotateY(180deg) ;
+                opacity: 0;
+                transition: all 1s ease;
                 h2{
                     margin-top: 27px;
                     margin-left: 4px;
@@ -890,7 +1050,11 @@ main{
 }
 
 
-
+._animation-active{
+    transform: translate(0, 0) !important;
+    opacity: 1 !important;
+    transform: rotateY(0deg) !important ;
+}
 
 @include width1200;
 @include mobile;
