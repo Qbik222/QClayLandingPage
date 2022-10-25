@@ -140,6 +140,12 @@ h1, h2, h3, h4, h5, h6 {
   .platformBg__shadow:nth-child(3n) {
     display: none;
   }
+  .cards__shadow {
+    display: none;
+  }
+  .cards__shadow:nth-child(2n) {
+    display: none;
+  }
   .footer__shadow {
     display: none;
   }
